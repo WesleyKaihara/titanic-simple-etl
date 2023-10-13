@@ -1,0 +1,16 @@
+version: '3.9'
+services:
+  data:
+    container_name: db_titanic
+    restart: on-failure
+    build: ./data
+    ports:
+      - 3307:3306
+    expose: [3307]
+  dw:
+    container_name: db_dw
+    restart: on-failure
+    build: ./dw
+    ports:
+      - 3308:3306
+    expose: [3308]
